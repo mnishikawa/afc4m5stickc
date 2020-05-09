@@ -1,0 +1,36 @@
+サーバー側のCGI、htmlファイル
+
+
+■　準備
+それぞれのファイルを、サーバーのCGIディレクトリとコンテンツディレクトリに配置してください。（Webサーバーの設定に応じてパーミッションも設定）
+
+・CGIディレクトリに配置
+　afc4m5stickc_run.cgi
+　afc4m5stickc_stop.cgi
+
+
+・コンテンツディレクトリに配置
+　afc4m5stickc.html
+
+（例）
+
+makoto@luce:/usr/lib/cgi-bin$ ls -l
+drwxr-xr-x   2 root     root     4096  5月  9 09:11 ./
+drwxr-xr-x 135 root     root     4096  3月  7 17:20 ../
+-rwxr-xr-x   1 www-data www-data  267  5月  9 09:01 afc4m5stickc_run.cgi*
+-rwxr-xr-x   1 www-data www-data  269  5月  9 09:11 afc4m5stickc_stop.cgi*
+
+
+makoto@luce:/var/www/html$ ls -l
+drwxrwxrwx 16 root     root     4096  5月  9 09:16 ./
+drwxrwxrwx  9 root     root     4096  9月 16  2019 ../
+-rwxr-xr-x  1 www-data www-data  336  5月  9 09:31 afc4m5stickc.html*
+-rw-r--r--  1 www-data www-data    5  5月  9 09:11 afc_command
+
+
+
+
+■　デモサーバーアプリの動作
+afc4m5stickc.htmlにアクセスして、”run”リンクを押すと、サーバーのコンテンツディレクトリに”afc_command”ファイルが生成されて、M5Stickはこれを読み込んで動作します。
+”run”が書かれていると、M5Stickに実行コマンドを送って餌やり機が動作します。
+
